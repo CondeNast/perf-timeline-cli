@@ -1,0 +1,38 @@
+{
+  "name": "perf-timeline",
+  "version": "0.1.0",
+  "description": "Generate Chrome Performance Timelines via a command line interface",
+  "main": "src/index.js",
+  "license": "Apache-2.0",
+  "contributors": [
+    {
+      "name": "Zack Tollman",
+      "url": "https://www.tollmanz.com"
+    }
+  ],
+  "scripts": {
+    "lint": "eslint ./bin ./src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "puppeteer": "^1.1.1",
+    "yargs": "^11.1.0"
+  },
+  "bin": {
+    "crimeline": "./bin/index.js"
+  },
+  "engines": {
+    "node": ">=8.0.0",
+    "npm": ">=5.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CondeNast/perf-timeline.git"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.9.0"
+  },
+  "private": true
+}
