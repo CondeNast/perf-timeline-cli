@@ -1,3 +1,5 @@
+const { megabitsToBytes } = require('../../utils/general');
+
 const CONNECTION_TYPES = [
   'none',
   'cellular2g',
@@ -62,14 +64,14 @@ const OPTIONS = {
     type: 'number',
     describe: 'Network download speed in mbps',
     group: 'Emulate Network Conditions',
-    coerce: val => (val * 1024 * 1024) / 8
+    coerce: megabitsToBytes
   },
   uploadThroughput: {
     default: 0,
     type: 'number',
     describe: 'Network upload speed in mbps',
     group: 'Emulate Network Conditions',
-    coerce: val => (val * 1024 * 1024) / 8
+    coerce: megabitsToBytes
   },
   connectionType: {
     default: 'none',
