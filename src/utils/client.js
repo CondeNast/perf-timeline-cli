@@ -7,5 +7,5 @@ const send = async (page, command, options) => {
 };
 
 module.exports = {
-  send,
+  send
 };

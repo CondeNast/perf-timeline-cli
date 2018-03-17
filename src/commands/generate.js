@@ -5,5 +5,5 @@ module.exports = {
   command: 'generate <url>',
   desc: 'Generate a timeline',
   builder,
-  handler,
+  handler
 };

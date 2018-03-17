@@ -12,20 +12,20 @@ const generate = async (url, options) => {
       latency: options.latency,
       downloadThroughput: options.downloadThroughput,
       uploadThroughput: options.uploadThroughput,
-      connectionType: options.connectionType,
+      connectionType: options.connectionType
     });
   }
 
   if (options.setCpuThrottlingRate === true) {
     // Note that the case use for CPU in the command name is sensitive
     await client.send(page, 'Emulation.setCPUThrottlingRate', {
-      rate: options.rate,
+      rate: options.rate
     });
   }
 
   const tracingStartOptions = {
     path: options.path,
-    screenshots: options.screenshots,
+    screenshots: options.screenshots
   };
 
   // Don't override Puppeteer's default unless explicitly called for.
@@ -40,7 +40,7 @@ const generate = async (url, options) => {
   try {
     await page.goto(url, {
       timeout: options.timeout,
-      waitUntil: options.waitUntil,
+      waitUntil: options.waitUntil
     });
   } catch (err) {
     throw (err);
@@ -56,5 +56,5 @@ const handler = (argv) => {
 };
 
 module.exports = {
-  handler,
+  handler
 };

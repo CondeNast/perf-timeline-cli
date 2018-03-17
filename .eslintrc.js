@@ -3,7 +3,8 @@ module.exports = {
     'airbnb-base',
   ],
   rules: {
-    'no-underscore-dangle': 0
+    'no-underscore-dangle': 0,
+    'comma-dangle': ['error', 'never']
   },
   env: {
     jest: true,

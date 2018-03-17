@@ -11,8 +11,8 @@ describe('client', () => {
     beforeEach(() => {
       page = {
         _client: {
-          send: sandbox.stub(),
-        },
+          send: sandbox.stub()
+        }
       };
     });
 
