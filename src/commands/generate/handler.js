@@ -31,7 +31,7 @@ const generate = async (url, options) => {
   // Don't override Puppeteer's default unless explicitly called for.
   // The default categories is a very long array and by passing nothing,
   // we automatically inherit it.
-  if (options.categories.length > 0) {
+  if (options.categories && options.categories.length > 0) {
     tracingStartOptions.categories = options.categories;
   }
 
