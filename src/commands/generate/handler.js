@@ -2,12 +2,15 @@ const puppeteer = require('puppeteer');
 
 const client = require('../../utils/client');
 
-const generate = async (url, options) => {
+const internals = {};
+
+internals.generate = async (url = '', options = {}) => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
 
   if (options.emulateNetworkConditions === true) {
-    await client.send(page, 'Network.emulateNetworkConditions', {
+    const command = client.buildCommand('NETWORK', 'EMULATE_NETWORK_CONDITIONS');
+    await client.send(page, command, {
       offline: options.offline,
       latency: options.latency,
       downloadThroughput: options.downloadThroughput,
@@ -17,8 +20,8 @@ const generate = async (url, options) => {
   }
 
   if (options.setCpuThrottlingRate === true) {
-    // Note that the case use for CPU in the command name is sensitive
-    await client.send(page, 'Emulation.setCPUThrottlingRate', {
+    const command = client.buildCommand('EMULATION', 'SET_CPU_THROTTLING_RATE');
+    await client.send(page, command, {
       rate: options.rate
     });
   }
@@ -50,11 +53,12 @@ const generate = async (url, options) => {
   await browser.close();
 };
 
-const handler = (argv) => {
+const handler = (argv = {}) => {
   const { url, ...options } = argv;
-  generate(url, options);
+  internals.generate(url, options);
 };
 
 module.exports = {
+  __internals__: internals,
   handler
 };

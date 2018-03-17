@@ -1,10 +1,37 @@
 const sinon = require('sinon');
 
-const { send } = require('../../../src/utils/client');
+const { buildCommand, send } = require('../../../src/utils/client');
 
 const sandbox = sinon.createSandbox();
 
 describe('client', () => {
+  describe('buildCommand', () => {
+    test('should return a string if nothing is passed', () => {
+      const actual = buildCommand();
+      expect(typeof actual).toBe('string');
+    });
+
+    test('should return an empty string if nothing is passed', () => {
+      const actual = buildCommand();
+      expect(actual).toBe('');
+    });
+
+    test('should return a string if unknown values are passed', () => {
+      const actual = buildCommand('foo', 'bar');
+      expect(typeof actual).toBe('string');
+    });
+
+    test('should return an empty string if unknown values are passed', () => {
+      const actual = buildCommand('foo', 'bar');
+      expect(actual).toBe('');
+    });
+
+    test('should return the correct string', () => {
+      const actual = buildCommand('NETWORK', 'EMULATE_NETWORK_CONDITIONS');
+      expect(actual).toBe('Network.emulateNetworkConditions');
+    });
+  });
+
   describe('send', () => {
     let page;
 
