@@ -11,8 +11,8 @@
     }
   ],
   "scripts": {
-    "lint": "eslint ./bin ./src",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint ./bin ./src ./test",
+    "test": "jest"
   },
   "dependencies": {
     "puppeteer": "^1.1.1",
@@ -32,7 +32,9 @@
   "devDependencies": {
     "eslint": "^4.19.0",
     "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.9.0"
+    "eslint-plugin-import": "^2.9.0",
+    "jest": "^22.4.2",
+    "sinon": "^4.4.6"
   },
   "private": true
 }
