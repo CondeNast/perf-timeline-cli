@@ -27,7 +27,7 @@ perf-timeline generate https://www.wired.com
 Generate a performance timeline while throttling network
 
 ```
-perf-timeline generate https://www.wired.com --emulate-network-conditions --latency 150 --upload-throughput 750 --download--throughput 1.6
+perf-timeline generate https://www.wired.com --emulate-network-conditions --latency 150 --upload-throughput 0.75 --download--throughput 1.6
 ```
 
 Generate a performance timeline while throttling CPU

@@ -63,7 +63,7 @@ describe('client', () => {
       expect(page._client.send.calledOnceWith(command, options)).toBe(true);
     });
 
-    test('should propogate error when page._client.send throws', async () => {
+    test('should propagate error when page._client.send throws', async () => {
       page._client.send.throws(new Error());
 
       try {
