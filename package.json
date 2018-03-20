@@ -20,7 +20,7 @@
     "yargs": "^11.1.0"
   },
   "bin": {
-    "crimeline": "./bin/index.js"
+    "perf-timeline": "./bin/index.js"
   },
   "engines": {
     "node": ">=8.0.0",
