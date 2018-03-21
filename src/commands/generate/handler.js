@@ -5,7 +5,10 @@ const client = require('../../utils/client');
 const internals = {};
 
 internals.generate = async (url = '', options = {}) => {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    ignoreHTTPSErrors: options.ignoreHTTPSErrors,
+    headless: options.headless
+  });
   const page = await browser.newPage();
 
   if (options.emulateNetworkConditions === true) {
@@ -31,9 +34,8 @@ internals.generate = async (url = '', options = {}) => {
     screenshots: options.screenshots
   };
 
-  // Don't override Puppeteer's default unless explicitly called for.
-  // The default categories is a very long array and by passing nothing,
-  // we automatically inherit it.
+  // Don't override Puppeteer's default unless explicitly called for. The default categories is a
+  // very long array and by passing nothing, we automatically inherit it.
   if (options.categories && options.categories.length > 0) {
     tracingStartOptions.categories = options.categories;
   }

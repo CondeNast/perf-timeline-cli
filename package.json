@@ -1,5 +1,5 @@
 {
-  "name": "perf-timeline",
+  "name": "perf-timeline-cli",
   "version": "0.1.0",
   "description": "Generate Chrome Performance Timelines via a command line interface",
   "main": "src/index.js",
@@ -28,7 +28,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/CondeNast/perf-timeline.git"
+    "url": "https://github.com/CondeNast/perf-timeline-cli.git"
   },
   "devDependencies": {
     "eslint": "^4.19.0",

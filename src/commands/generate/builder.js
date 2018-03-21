@@ -33,12 +33,6 @@ const OPTIONS = {
     describe: 'Whether to run browser in headless mode',
     group: 'Launch'
   },
-  devtools: {
-    default: false,
-    type: 'boolean',
-    describe: 'Whether to auto-open a DevTools panel for each tab',
-    group: 'Launch'
-  },
 
   // Network emulation options
   emulateNetworkConditions: {
@@ -60,14 +54,14 @@ const OPTIONS = {
     group: 'Emulate Network Conditions'
   },
   downloadThroughput: {
-    default: 0,
+    default: -1,
     type: 'number',
     describe: 'Network download speed in mbps',
     group: 'Emulate Network Conditions',
     coerce: megabitsToBytes
   },
   uploadThroughput: {
-    default: 0,
+    default: -1,
     type: 'number',
     describe: 'Network upload speed in mbps',
     group: 'Emulate Network Conditions',
@@ -89,24 +83,24 @@ const OPTIONS = {
     group: 'CPU Emulation Options'
   },
   rate: {
-    default: 0,
+    default: 1,
     type: 'number',
     describe: 'CPU throttle rate',
     group: 'CPU Emulation Options'
   },
 
   // Goto options
+  timeout: {
+    default: 30 * 1000,
+    type: 'number',
+    describe: 'How long to wait for the navigation to complete in ms',
+    group: 'Goto Options'
+  },
   waitUntil: {
     default: 'load',
     type: 'string',
     describe: 'How long to wait until stopping the page navigation',
     choices: WAIT_UNTIL_OPTIONS,
-    group: 'Goto Options'
-  },
-  timeout: {
-    default: 30 * 1000,
-    type: 'number',
-    describe: 'How long to wait for the navigation to complete in ms',
     group: 'Goto Options'
   },
 
