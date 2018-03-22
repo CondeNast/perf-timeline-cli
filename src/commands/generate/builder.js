@@ -21,7 +21,7 @@ const WAIT_UNTIL_OPTIONS = [
 
 const OPTIONS = {
   // Launch options
-  ignoreHttpsErrors: {
+  'ignore-https-errors': {
     default: false,
     type: 'boolean',
     describe: 'Whether to ignore HTTPS errors during navigation',
@@ -35,7 +35,7 @@ const OPTIONS = {
   },
 
   // Network emulation options
-  emulateNetworkConditions: {
+  'emulate-network-conditions': {
     default: false,
     type: 'boolean',
     describe: 'Emulate network conditions',
@@ -53,21 +53,21 @@ const OPTIONS = {
     describe: 'Network latency',
     group: 'Emulate Network Conditions'
   },
-  downloadThroughput: {
+  'download-throughput': {
     default: -1,
     type: 'number',
     describe: 'Network download speed in mbps',
     group: 'Emulate Network Conditions',
     coerce: megabitsToBytes
   },
-  uploadThroughput: {
+  'upload-throughput': {
     default: -1,
     type: 'number',
     describe: 'Network upload speed in mbps',
     group: 'Emulate Network Conditions',
     coerce: megabitsToBytes
   },
-  connectionType: {
+  'connection-type': {
     default: 'none',
     type: 'string',
     describe: 'Emulated connection type',
@@ -76,7 +76,7 @@ const OPTIONS = {
   },
 
   // CPU emulation options
-  setCpuThrottlingRate: {
+  'set-cpu-throttling-rate': {
     default: false,
     type: 'boolean',
     describe: 'Whether or not to throttle CPU',
@@ -96,7 +96,7 @@ const OPTIONS = {
     describe: 'How long to wait for the navigation to complete in ms',
     group: 'Goto Options'
   },
-  waitUntil: {
+  'wait-until': {
     default: 'load',
     type: 'string',
     describe: 'How long to wait until stopping the page navigation',
