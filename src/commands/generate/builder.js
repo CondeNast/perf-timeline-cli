@@ -54,14 +54,14 @@ const OPTIONS = {
     group: 'Emulate Network Conditions'
   },
   'download-throughput': {
-    default: -1,
+    default: 0,
     type: 'number',
     describe: 'Network download speed in mbps',
     group: 'Emulate Network Conditions',
     coerce: megabitsToBytes
   },
   'upload-throughput': {
-    default: -1,
+    default: 0,
     type: 'number',
     describe: 'Network upload speed in mbps',
     group: 'Emulate Network Conditions',
