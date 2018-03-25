@@ -37,6 +37,5 @@
     "eslint-plugin-import": "^2.9.0",
     "jest": "^22.4.3",
     "sinon": "^4.4.8"
-  },
-  "private": true
+  }
 }
