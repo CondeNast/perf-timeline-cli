@@ -6,6 +6,7 @@ const {
   handler
 } = require('../../../../src/commands/generate/handler');
 const client = require('../../../../src/utils/client');
+const die = require('../../../../src/utils/die');
 
 const sandbox = sinon.createSandbox();
 
@@ -15,6 +16,7 @@ describe('src/commands/generate/handler', () => {
     let page;
     let browser;
     let clientSendStub;
+    let dieStub;
 
     beforeEach(() => {
       page = {
@@ -30,6 +32,7 @@ describe('src/commands/generate/handler', () => {
       };
       puppeteerLaunchStub = sandbox.stub(puppeteer, 'launch').resolves(browser);
       clientSendStub = sandbox.stub(client, 'send').resolves();
+      dieStub = sandbox.stub(die, 'die');
     });
 
     afterEach(() => {
@@ -120,6 +123,16 @@ describe('src/commands/generate/handler', () => {
         expect(clientSendStub.calledOnce).toBe(true);
       });
 
+      test('should call die when client send throws for the network command', async () => {
+        clientSendStub.throws();
+        await internals.generate(url, {
+          emulateNetworkConditions: true
+        });
+
+        expect(clientSendStub.called).toBe(true);
+        expect(dieStub.called).toBe(true);
+      });
+
       test('should call client.send with correct args when emulateNetworkConditions is true', async () => {
         const clientSendArgs = {
           offline: 'foo',
@@ -156,6 +169,16 @@ describe('src/commands/generate/handler', () => {
 
         await internals.generate(url, options);
         expect(clientSendStub.calledOnceWith(page, command, clientSendArgs)).toBe(true);
+      });
+
+      test('should call die when client send throws for the cpu command', async () => {
+        clientSendStub.throws();
+        await internals.generate(url, {
+          setCpuThrottlingRate: true
+        });
+
+        expect(clientSendStub.called).toBe(true);
+        expect(dieStub.called).toBe(true);
       });
 
       test('should call page.tracing.start with correct args', async () => {

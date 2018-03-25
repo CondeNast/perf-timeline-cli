@@ -12,10 +12,11 @@
   ],
   "scripts": {
     "lint": "eslint ./bin ./src ./test",
-    "test": "jest",
+    "test": "NODE_ENV=test jest",
     "test:coverage": "jest --coverage"
   },
   "dependencies": {
+    "cli-logger": "^0.5.40",
     "puppeteer": "^1.1.1",
     "yargs": "^11.1.0"
   },

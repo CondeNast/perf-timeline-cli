@@ -1,10 +1,12 @@
 const puppeteer = require('puppeteer');
 
 const client = require('../../utils/client');
+const dieModule = require('../../utils/die');
 
 const internals = {};
 
 internals.generate = async (url = '', options = {}) => {
+  const { die } = dieModule;
   const browser = await puppeteer.launch({
     ignoreHTTPSErrors: options.ignoreHTTPSErrors,
     headless: options.headless
@@ -13,20 +15,30 @@ internals.generate = async (url = '', options = {}) => {
 
   if (options.emulateNetworkConditions === true) {
     const command = client.buildCommand('NETWORK', 'EMULATE_NETWORK_CONDITIONS');
-    await client.send(page, command, {
-      offline: options.offline,
-      latency: options.latency,
-      downloadThroughput: options.downloadThroughput,
-      uploadThroughput: options.uploadThroughput,
-      connectionType: options.connectionType
-    });
+
+    try {
+      await client.send(page, command, {
+        offline: options.offline,
+        latency: options.latency,
+        downloadThroughput: options.downloadThroughput,
+        uploadThroughput: options.uploadThroughput,
+        connectionType: options.connectionType
+      });
+    } catch (err) {
+      die(err, browser);
+    }
   }
 
   if (options.setCpuThrottlingRate === true) {
     const command = client.buildCommand('EMULATION', 'SET_CPU_THROTTLING_RATE');
-    await client.send(page, command, {
-      rate: options.rate
-    });
+
+    try {
+      await client.send(page, command, {
+        rate: options.rate
+      });
+    } catch (err) {
+      die(err, browser);
+    }
   }
 
   const tracingStartOptions = {
@@ -48,7 +60,7 @@ internals.generate = async (url = '', options = {}) => {
       waitUntil: options.waitUntil
     });
   } catch (err) {
-    throw (err);
+    die(err, browser);
   }
 
   await page.tracing.stop();
