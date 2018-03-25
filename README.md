@@ -3,6 +3,8 @@
 A command line interface for generating Chrome Performance timelines.
 
 [![license](https://img.shields.io/badge/license-Apache%202.0-blue.svg?style=flat)](LICENSE)
+[![Build Status](https://travis-ci.org/CondeNast/perf-timeline-cli.svg?branch=master)](https://travis-ci.org/CondeNast/perf-timeline-cli)
+[![Coverage Status](https://coveralls.io/repos/github/CondeNast/perf-timeline-cli/badge.svg?branch=master)](https://coveralls.io/github/CondeNast/perf-timeline-cli?branch=master)
 
 _Proudly built by:_
 
@@ -42,7 +44,9 @@ Perf Timeline CLI requires Node 8+ and a current version of Chrome to view gener
 
 ## Install
 
-1. `npm install -g perf-timeline-cli`
+```
+npm install -g perf-timeline-cli
+```
 
 ## Usage
 

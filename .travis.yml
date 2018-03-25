@@ -1,0 +1,18 @@
+---
+language: node_js
+node_js:
+  - "8"
+
+notifications:
+  email: false
+
+install:
+  - npm install
+
+script:
+  - npm run lint
+  - npm test -- --coverage
+
+after_success:
+  # Deploy coverage reports to Coveralls for node 8 run
+  - if [[ $(node -v) == v8* ]]; then npm install coveralls; ./node_modules/.bin/coveralls < coverage/lcov.info; fi
