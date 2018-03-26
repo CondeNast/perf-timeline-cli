@@ -6,11 +6,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.1.1] - 2018-03-26
+
 ### Fixed
 - Updated docs to use package name with namespace for the install command
+- Bumped version to publish publicly
 
 ## 0.1.0 - 2018-03-25
 - Initial release
 
 <!-- Update the Unreleased comparison range with each release -->
-[Unreleased]: https://github.com/CondeNast/perf-timeline/compare/0.1.0..master
+[Unreleased]: https://github.com/CondeNast/perf-timeline/compare/0.1.1...master
+[0.1.1]: https://github.com/CondeNast/perf-timeline/compare/0.1.0...0.1.1
