@@ -45,7 +45,7 @@ Perf Timeline CLI requires Node 8+ and a current version of Chrome to view gener
 ## Install
 
 ```
-npm install -g perf-timeline-cli
+npm install -g @condenast/perf-timeline-cli
 ```
 
 ## Usage
