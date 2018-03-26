@@ -2,9 +2,12 @@
 
 A command line interface for generating Chrome Performance timelines.
 
-[![license](https://img.shields.io/badge/license-Apache%202.0-blue.svg?style=flat)](LICENSE)
-[![Build Status](https://travis-ci.org/CondeNast/perf-timeline-cli.svg?branch=master)](https://travis-ci.org/CondeNast/perf-timeline-cli)
-[![Coverage Status](https://coveralls.io/repos/github/CondeNast/perf-timeline-cli/badge.svg?branch=master)](https://coveralls.io/github/CondeNast/perf-timeline-cli?branch=master)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg?style=flat)](LICENSE)
+![GitHub package version](https://img.shields.io/github/package-json/v/condenast/perf-timeline-cli.svg)
+[![Build status](https://travis-ci.org/CondeNast/perf-timeline-cli.svg?branch=master)](https://travis-ci.org/CondeNast/perf-timeline-cli)
+[![Coverage status](https://coveralls.io/repos/github/CondeNast/perf-timeline-cli/badge.svg?branch=master)](https://coveralls.io/github/CondeNast/perf-timeline-cli?branch=master)
+![Dependencies](https://img.shields.io/david/condenast/perf-timeline-cli.svg)
+![Dev Dependencies](https://img.shields.io/david/dev/condenast/perf-timeline-cli.svg)
 
 _Proudly built by:_
 
