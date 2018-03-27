@@ -18,7 +18,8 @@ internals.generate = async (url = '', options = {}) => {
     handleSIGTERM: options.handleSigterm,
     handleSIGHUP: options.handleSighup,
     timeout: options.timeout,
-    dumpio: options.dumpio
+    dumpio: options.dumpio,
+    userDataDir: options.userDataDir
   });
   const page = await browser.newPage();
 

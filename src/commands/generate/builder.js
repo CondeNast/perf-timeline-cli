@@ -89,6 +89,12 @@ const OPTIONS = {
     describe: 'Whether to pipe the browser process stdout and stderr into process.stdout and process.stderr',
     group: 'Launch'
   },
+  'user-data-dir': {
+    default: '',
+    type: 'string',
+    describe: 'Path to a User Data Directory',
+    group: 'Launch'
+  },
 
   // Network emulation options
   'emulate-network-conditions': {
