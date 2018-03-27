@@ -18,7 +18,7 @@ _Proudly built by:_
 Generate a timeline, see how many [Layout](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction)
 events occurred, and get the total JavaScript execution time using [Big Rig](https://github.com/googlearchive/node-big-rig).
 
-<img src=".project/perf-timeline.svg" />
+![Command line demo SVG](https://cdn.rawgit.com/CondeNast/perf-timeline-cli/master/.project/perf-timeline.svg)
 
 ## Motivations
 
