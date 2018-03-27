@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.1.2] - 2018-03-26
+
 ### Added
 
 * Added badges to communicate project version and dependency status
@@ -26,5 +28,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 * Initial release
 
-[Unreleased]: https://github.com/CondeNast/perf-timeline/compare/0.1.1...master
+[Unreleased]: https://github.com/CondeNast/perf-timeline/compare/0.1.2...master
+[0.1.2]: https://github.com/CondeNast/perf-timeline/compare/0.1.1...0.1.2
 [0.1.1]: https://github.com/CondeNast/perf-timeline/compare/0.1.0...0.1.1
