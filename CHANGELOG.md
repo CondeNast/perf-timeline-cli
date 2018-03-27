@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 * Added badges to communicate project version and dependency status
+* Added keywords to package.json
 
 ## [0.1.1] - 2018-03-26
 
