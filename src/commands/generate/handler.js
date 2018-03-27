@@ -9,7 +9,16 @@ internals.generate = async (url = '', options = {}) => {
   const { die } = dieModule;
   const browser = await puppeteer.launch({
     ignoreHTTPSErrors: options.ignoreHTTPSErrors,
-    headless: options.headless
+    headless: options.headless,
+    executablePath: options.executablePath,
+    slowMo: options.slowMo,
+    args: options.args,
+    ignoreDefaultArgs: options.ignoreDefaultArgs,
+    handleSIGINT: options.handleSigint,
+    handleSIGTERM: options.handleSigterm,
+    handleSIGHUP: options.handleSighup,
+    timeout: options.timeout,
+    dumpio: options.dumpio
   });
   const page = await browser.newPage();
 

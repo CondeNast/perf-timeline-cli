@@ -33,6 +33,62 @@ const OPTIONS = {
     describe: 'Whether to run browser in headless mode',
     group: 'Launch'
   },
+  'executable-path': {
+    default: null, // Empty string will throw an error in Puppeteer
+    type: 'string',
+    describe: 'Path to a Chromium or Chrome executable to run instead of the bundled Chromium',
+    group: 'Launch'
+  },
+  'slow-mo': {
+    default: 0,
+    type: 'number',
+    describe: 'Slows down Puppeteer operations by the specified amount of milliseconds',
+    group: 'Launch'
+  },
+  args: {
+    default: [],
+    type: 'array',
+    describe: 'Additional arguments to pass to the browser instance',
+    group: 'Launch'
+  },
+  'ignore-default-args': {
+    default: false,
+    type: 'boolean',
+    describe: 'Do not use Puppeteer\'s defaultArgs object',
+    group: 'Launch'
+  },
+  'handle-sigint': {
+    default: true,
+    type: 'boolean',
+    describe: 'Close the browser process on Ctrl-C',
+    group: 'Launch'
+  },
+  'handle-sigterm': {
+    default: true,
+    type: 'boolean',
+    describe: 'Close the browser process on SIGTERM',
+    group: 'Launch'
+  },
+  'handle-sighup': {
+    default: true,
+    type: 'boolean',
+    describe: 'Close the browser process on SIGHUP',
+    group: 'Launch'
+  },
+
+  // @todo: naming conflict
+  timeout: {
+    default: 30000,
+    type: 'number',
+    describe: 'Maximum time in milliseconds to wait for the browser instance to start',
+    group: 'Launch'
+  },
+  dumpio: {
+    default: false,
+    type: 'boolean',
+    describe: 'Whether to pipe the browser process stdout and stderr into process.stdout and process.stderr',
+    group: 'Launch'
+  },
 
   // Network emulation options
   'emulate-network-conditions': {
