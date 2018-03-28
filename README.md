@@ -172,7 +172,7 @@ generation is stopped. Note that if you emulate the network or CPU, or if you se
 generating a timeline.
 * `--wait-until` (optional; `load`) - The success event for the navigation. Puppeteer "waits until"
 this event has occurred to finish the timeline. `load`, `domcontentloaded`, `networkidle0`, and
-`networkidle2` are supported. Note that `--timeout` takes precendence over `--wait-until`. If the
+`networkidle2` are supported. Note that `--timeout` takes precedence over `--wait-until`. If the
 `--wait-until` event has not occurred before the `--timeout` time is reached, an error is thrown and
 no timeline will be generated.
 
