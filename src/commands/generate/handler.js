@@ -19,7 +19,9 @@ internals.generate = async (url = '', options = {}) => {
     handleSIGHUP: options.handleSighup,
     timeout: options.timeout,
     dumpio: options.dumpio,
-    userDataDir: options.userDataDir
+    userDataDir: options.userDataDir,
+    env: options.env,
+    devtools: options.devtools
   });
   const page = await browser.newPage();
 

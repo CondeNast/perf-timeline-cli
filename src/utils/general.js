@@ -1,3 +1,5 @@
+const dieModule = require('./die');
+
 /**
  * Converts megabits to bytes.
  *
@@ -14,6 +16,39 @@
  */
 const megabitsToBytes = megabits => (megabits * 1024 * 1024) / 8;
 
+// h/t https://stackoverflow.com/a/33369954
+const isJson = (item) => {
+  let value = (typeof item !== 'string') ? JSON.stringify(item) : item;
+
+  try {
+    value = JSON.parse(value);
+  } catch (e) {
+    return false;
+  }
+
+  if (typeof value === 'object' && value !== null) {
+    return true;
+  }
+
+  return false;
+};
+
+const maybeStringToJson = (value) => {
+  const { die } = dieModule;
+
+  if (isJson(value)) {
+    return value;
+  }
+
+  try {
+    return JSON.parse(value);
+  } catch (err) {
+    die(err);
+  }
+};
+
 module.exports = {
+  isJson,
+  maybeStringToJson,
   megabitsToBytes
 };

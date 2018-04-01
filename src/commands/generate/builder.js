@@ -1,4 +1,4 @@
-const { megabitsToBytes } = require('../../utils/general');
+const { maybeStringToJson, megabitsToBytes } = require('../../utils/general');
 
 const CONNECTION_TYPES = [
   'none',
@@ -73,6 +73,19 @@ const OPTIONS = {
     default: true,
     type: 'boolean',
     describe: 'Close the browser process on SIGHUP',
+    group: 'Launch'
+  },
+  env: {
+    default: process.env,
+    type: 'string',
+    describe: 'Specify environment variables that will be visible to the browser',
+    group: 'Launch',
+    coerce: maybeStringToJson
+  },
+  devtools: {
+    default: false,
+    type: 'boolean',
+    describe: 'Whether to auto-open a DevTools panel for each tab',
     group: 'Launch'
   },
 
