@@ -75,19 +75,6 @@ const OPTIONS = {
     describe: 'Close the browser process on SIGHUP',
     group: 'Launch'
   },
-  env: {
-    default: process.env,
-    type: 'string',
-    describe: 'Specify environment variables that will be visible to the browser',
-    group: 'Launch',
-    coerce: maybeStringToJson
-  },
-  devtools: {
-    default: false,
-    type: 'boolean',
-    describe: 'Whether to auto-open a DevTools panel for each tab',
-    group: 'Launch'
-  },
   'launch-timeout': {
     default: 30000,
     type: 'number',
@@ -104,6 +91,25 @@ const OPTIONS = {
     default: '',
     type: 'string',
     describe: 'Path to a User Data Directory',
+    group: 'Launch'
+  },
+  env: {
+    default: process.env,
+    type: 'string',
+    describe: 'Specify environment variables that will be visible to the browser',
+    group: 'Launch',
+    coerce: maybeStringToJson
+  },
+  devtools: {
+    default: false,
+    type: 'boolean',
+    describe: 'Whether to auto-open a DevTools panel for each tab',
+    group: 'Launch'
+  },
+  pipe: {
+    default: false,
+    type: 'boolean',
+    describe: 'Connects to the browser over a pipe instead of a WebSocket',
     group: 'Launch'
   },
 

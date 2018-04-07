@@ -17,11 +17,12 @@ internals.generate = async (url = '', options = {}) => {
     handleSIGINT: options.handleSigint,
     handleSIGTERM: options.handleSigterm,
     handleSIGHUP: options.handleSighup,
-    timeout: options.timeout,
+    timeout: options.launchTimeout, // Note the naming difference due to "timeout" name collision
     dumpio: options.dumpio,
     userDataDir: options.userDataDir,
     env: options.env,
-    devtools: options.devtools
+    devtools: options.devtools,
+    pipe: options.pipe
   });
   const page = await browser.newPage();
 

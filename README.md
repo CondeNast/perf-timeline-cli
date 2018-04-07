@@ -112,9 +112,22 @@ Documentation](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md
 * `--ignore-https-errors` (optional; `false`) - When `--ignore-https-errors` is passed, an HTTPS
 errors will be ignored. This causes Chrome's default error behaviors when encountering HTTPS issues
 to be ignored.
-* `--headless` (options; `true`) - By default, Perf Timeline CLI runs in "[headless](https://developers.google.com/web/updates/2017/04/headless-chrome)" mode (i.e., without a visible
+* `--headless` (optional; `true`) - By default, Perf Timeline CLI runs in "[headless](https://developers.google.com/web/updates/2017/04/headless-chrome)" mode (i.e., without a visible
 browser UI). To see a browser UI when generating the timeline, pass the `--headless false` to the
 `generate` command. Please note that `--no-headless` is a synonym for `--headless false`.
+* `--executable-path` (optional; `null`) - Define a path to run a specific Chrome or Chromium
+executable. By default, the bundled Chromium, which is the optimal executable for Puppeteer will be
+used to generate the timeline. If you prefer a specific executable, you can define the path to the
+file here.
+* `--slow-mo` (optional; `0`) - Number of milliseconds to slow down the Puppeteer steps. This adds
+a timeout between Puppeteer steps and is primary used for debugging to allow you to make
+observations between steps. Please note that this could potentially cause inaccurate timelines to be
+generated.
+* `--args` (options; `''`) - Additional flag arguments that can be passed to the browser instance
+when starting it. There are a [number of flags](https://peter.sh/experiments/chromium-command-line-switches/)
+that can be passed. The flags should be passed as a comma separated list, e.g.,
+`--args="--disable-gpu,--video-threads=5"`. Due to the sheer volume of possible flags, not all can
+be verified. Your mileage may vary.
 
 ### Network Emulation Options
 
