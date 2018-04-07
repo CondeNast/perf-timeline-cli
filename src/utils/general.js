@@ -16,7 +16,14 @@ const dieModule = require('./die');
  */
 const megabitsToBytes = megabits => (megabits * 1024 * 1024) / 8;
 
-// h/t https://stackoverflow.com/a/33369954
+/**
+ * Determine if value if valid JSON.
+ *
+ * Ref: https://stackoverflow.com/a/33369954
+ *
+ * @param {*} item - Value to test.
+ * @returns {bool} Whether or not the value is parsable JSON.
+ */
 const isJson = (item) => {
   let value = (typeof item !== 'string') ? JSON.stringify(item) : item;
 
@@ -33,18 +40,37 @@ const isJson = (item) => {
   return false;
 };
 
+/**
+ * Convert value to JSON if possible.
+ *
+ * The main purpose of this function is turning JSON-like data into a JavaScript object for use as
+ * args. It enables users to pass in a JSON string as input and allow for conversion to an object
+ * to be used as an argument.
+ *
+ * @param {*} value - Value to convert to a JS object.
+ * @returns {object} The input value converted to a JS object.
+ */
 const maybeStringToJson = (value) => {
   const { die } = dieModule;
+  let result = value;
 
-  if (isJson(value)) {
-    return value;
+  // If the value is a JSON-like JS object, it can be returned early
+  if (isJson(value) && typeof value === 'object') {
+    return result;
   }
 
   try {
-    return JSON.parse(value);
+    // If it parses into a JS object, it is JSON-like enough to use
+    result = JSON.parse(value);
+
+    if (typeof result !== 'object') {
+      throw new Error('string cannot be converted to object');
+    }
   } catch (err) {
     die(err);
   }
+
+  return result;
 };
 
 module.exports = {

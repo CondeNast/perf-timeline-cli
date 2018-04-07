@@ -88,9 +88,7 @@ const OPTIONS = {
     describe: 'Whether to auto-open a DevTools panel for each tab',
     group: 'Launch'
   },
-
-  // @todo: naming conflict
-  timeout: {
+  'launch-timeout': {
     default: 30000,
     type: 'number',
     describe: 'Maximum time in milliseconds to wait for the browser instance to start',
