@@ -128,6 +128,37 @@ when starting it. There are a [number of flags](https://peter.sh/experiments/chr
 that can be passed. The flags should be passed as a comma separated list, e.g.,
 `--args="--disable-gpu,--video-threads=5"`. Due to the sheer volume of possible flags, not all can
 be verified. Your mileage may vary.
+* `--ignore-default-args` (optional; `false`) - Passing this flag will ignore Puppeteer's default
+args for launching Chrome.
+* `--handle-sigint` (optional; `true`) - Setting this to `false` or passing `--no-handle-sigint`
+will cause Puppeteer to ignore the closing the browser on Ctrl-C. By default, the browser is closed
+on Ctrl-C.
+* `--handle-sigterm` (optional; `true`) - Setting this to `false` or passing `--no-handle-sigterm`
+will cause Puppeteer to ignore the closing the browser on SIGTERM. By default, the browser is closed
+on SIGTERM.
+* `--handle-sighup` (optional; `true`) - Setting this to `false` or passing `--no-handle-sighup`
+will cause Puppeteer to ignore the closing the browser on SIGHUP. By default, the browser is closed
+on SIGHUP.
+* `--launch-timeout` (optional; `30000`) - Amount of time in milliseconds to allow the browser to
+launch before timing out. Note that the name of this arg diverges from Puppeteer's due to a name
+collision with another argument.
+* `--dumpio` (optional; `false`) - Determines whether or not to send the browser process' stdout and
+stderr to the terminal. Setting this argument to `true` will show the console information in the
+terminal session.
+* `--user-data-dir` (optional; `''`) - The path to the user directory that you wish you use while
+creating the timeline.
+* `--env` (optional: `process.env`) - The `env` argument allows you to specify environment variables
+to use for the browser session. By default, it will read from `process.env`. However, if you wish
+to pass variables into the tool via command args, you can do so via the `env` arg. The value must be
+a valid JSON string. For instance, `--env='{"foo":"bar","biz":{"boz":"buz"}}'`. Since the default is
+to use `process.env`, you can pass arguments via traditional environment variables. This interface
+is optional and allows for greater flexibility.
+* `--devtools` (optional; `false`) - Passing this flag will open a DevTools tab when
+using Perf Timeline in non-headless mode. Note that if page execution is really fast, this option
+won't do much. You can slow down execution using the `--slow-mo` arg. A reasonable way to use this
+arg would to do something like: `--slow-mo 2000 --no-headless --devtools`.
+* `--pipe` (optional; `false`) - Passing this flag causes Puppeteer to use a pipe to connect to the
+browser instead of the default web socket method.
 
 ### Network Emulation Options
 
