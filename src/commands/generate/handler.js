@@ -68,7 +68,9 @@ internals.generate = async (url = '', options = {}) => {
 };
 
 const handler = (argv = {}) => {
-  const { url, ...options } = argv;
+  const options = Object.assign({}, argv);
+  const { url } = options;
+  delete options.url;
   internals.generate(url, options);
 };
 

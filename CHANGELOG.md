@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+
+* Remove spread operator as it causes an error to be thrown for Node 8.2.x and lower
+([#10](https://github.com/CondeNast/perf-timeline-cli/issues/10))
+
 ## [0.1.2] - 2018-03-26
 
 ### Added
