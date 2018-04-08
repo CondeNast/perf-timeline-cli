@@ -1,6 +1,6 @@
 {
   "name": "@condenast/perf-timeline-cli",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Generate Chrome Performance Timelines via a command line interface",
   "main": "src/index.js",
   "license": "Apache-2.0",

@@ -6,8 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.1.3] - 2018-04-08
+
 ### Fixed
 
+* Corrected typo in README.md ([#8](https://github.com/CondeNast/perf-timeline-cli/pull/8))
 * Remove spread operator as it causes an error to be thrown for Node 8.2.x and lower
 ([#10](https://github.com/CondeNast/perf-timeline-cli/issues/10))
 
@@ -33,6 +36,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 * Initial release
 
-[Unreleased]: https://github.com/CondeNast/perf-timeline/compare/0.1.2...master
+[Unreleased]: https://github.com/CondeNast/perf-timeline/compare/0.1.3...master
+[0.1.3]: https://github.com/CondeNast/perf-timeline/compare/0.1.2...0.1.3
 [0.1.2]: https://github.com/CondeNast/perf-timeline/compare/0.1.1...0.1.2
 [0.1.1]: https://github.com/CondeNast/perf-timeline/compare/0.1.0...0.1.1
