@@ -109,7 +109,7 @@ Launch options are passed to the `puppeteer.launch()` command. Not all options a
 supported. Supported options are listed below. For more information, please see the [Puppeteer
 Documentation](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#puppeteerlaunchoptions).
 
-* `--ignore-https-errors` (optional; `false`) - When `--ignore-https-errors` is passed, an HTTPS
+* `--ignore-https-errors` (optional; `false`) - When `--ignore-https-errors` is passed, all HTTPS
 errors will be ignored. This causes Chrome's default error behaviors when encountering HTTPS issues
 to be ignored.
 * `--headless` (optional; `true`) - By default, Perf Timeline CLI runs in "[headless](https://developers.google.com/web/updates/2017/04/headless-chrome)" mode (i.e., without a visible
