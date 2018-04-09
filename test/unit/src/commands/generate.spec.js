@@ -1,4 +1,4 @@
-const generate = require('../../../src/commands/generate');
+const generate = require('../../../../src/commands/generate');
 
 describe('src/commands/generate', () => {
   describe('command', () => {

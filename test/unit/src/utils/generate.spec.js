@@ -1,4 +1,4 @@
-const general = require('../../../src/utils/general');
+const general = require('../../../../src/utils/general');
 
 describe('src/utils/general', () => {
   test('should convert number to correct value', () => {

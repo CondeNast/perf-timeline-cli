@@ -1,4 +1,4 @@
-const { logger } = require('../../../src/utils/logger');
+const { logger } = require('../../../../src/utils/logger');
 
 describe('src/utils/logger', () => {
   test('should export an object', () => {
