@@ -24,7 +24,8 @@ describe('src/commands/generate/handler', () => {
           start: sandbox.stub().resolves(),
           stop: sandbox.stub().resolves()
         },
-        goto: sandbox.stub().resolves()
+        goto: sandbox.stub().resolves(),
+        setViewport: sandbox.stub().resolves()
       };
       browser = {
         newPage: sandbox.stub().resolves(page),
@@ -225,6 +226,18 @@ describe('src/commands/generate/handler', () => {
 
         await internals.generate(url, options);
         expect(page.goto.calledOnceWith(url, options)).toBe(true);
+      });
+
+      test('should set viewPort with correct args', async () => {
+        const options = {
+          viewportSize: {
+            width: 320,
+            height: 568
+          }
+        };
+
+        await internals.generate(url, options);
+        expect(page.setViewport.calledOnceWith({ width: 320, height: 568 })).toBe(true);
       });
     });
   });

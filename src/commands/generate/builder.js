@@ -33,7 +33,22 @@ const OPTIONS = {
     describe: 'Whether to run browser in headless mode',
     group: 'Launch'
   },
-
+  // Page configuration
+  'viewport-size': {
+    default: null,
+    type: 'string',
+    describe: 'Viewport size. Format: WIDTHxHEIGHT',
+    group: 'Page',
+    coerce: (viewportSize) => {
+      if (viewportSize) {
+        const viewportDimensions = viewportSize.split('x');
+        const width = parseInt(viewportDimensions[0], 10);
+        const height = parseInt(viewportDimensions[1], 10);
+        return { width, height };
+      }
+      return null;
+    }
+  },
   // Network emulation options
   'emulate-network-conditions': {
     default: false,

@@ -13,6 +13,10 @@ internals.generate = async (url = '', options = {}) => {
   });
   const page = await browser.newPage();
 
+  if (options.viewportSize) {
+    await page.setViewport(options.viewportSize);
+  }
+
   if (options.emulateNetworkConditions === true) {
     const command = client.buildCommand('NETWORK', 'EMULATE_NETWORK_CONDITIONS');
 
