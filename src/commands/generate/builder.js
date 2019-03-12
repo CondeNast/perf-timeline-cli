@@ -33,7 +33,6 @@ const OPTIONS = {
     describe: 'Whether to run browser in headless mode',
     group: 'Launch'
   },
-
   // Network emulation options
   'emulate-network-conditions': {
     default: false,
@@ -123,6 +122,43 @@ const OPTIONS = {
     type: 'array',
     describe: 'Categories to retrieve from the trace',
     group: 'Tracing options'
+  },
+  // Page.set-viewport
+  'page.set-viewport.width': {
+    default: 800,
+    type: 'number',
+    describe: 'Page width in pixels',
+    group: 'Page'
+  },
+  'page.set-viewport.height': {
+    default: 600,
+    type: 'number',
+    describe: 'Page height in pixels',
+    group: 'Page'
+  },
+  'page.set-viewport.deviceScaleFactor': {
+    default: 1,
+    type: 'number',
+    describe: 'Specify device scale factor (can be thought of as dpr). Defaults to 1',
+    group: 'Page'
+  },
+  'page.set-viewport.isMobile': {
+    default: false,
+    type: 'boolean',
+    describe: 'Whether the meta viewport tag is taken into account. Defaults to false',
+    group: 'Page'
+  },
+  'page.set-viewport.hasTouch': {
+    default: false,
+    type: 'boolean',
+    describe: 'Specifies if viewport supports touch events.',
+    group: 'Page'
+  },
+  'page.set-viewport.isLandscape': {
+    default: false,
+    type: 'boolean',
+    describe: 'Specifies if viewport is in landscape mode.',
+    group: 'Page'
   }
 };
 

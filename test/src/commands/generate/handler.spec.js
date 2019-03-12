@@ -24,7 +24,8 @@ describe('src/commands/generate/handler', () => {
           start: sandbox.stub().resolves(),
           stop: sandbox.stub().resolves()
         },
-        goto: sandbox.stub().resolves()
+        goto: sandbox.stub().resolves(),
+        setViewport: sandbox.stub().resolves()
       };
       browser = {
         newPage: sandbox.stub().resolves(page),
@@ -225,6 +226,36 @@ describe('src/commands/generate/handler', () => {
 
         await internals.generate(url, options);
         expect(page.goto.calledOnceWith(url, options)).toBe(true);
+      });
+
+      test('should set page viewport with correct args', async () => {
+        const viewportOptions = {
+          width: 320,
+          height: 568,
+          isMobile: false,
+          hasTouch: false,
+          isLandscape: false
+        };
+        const options = {
+          page: {
+            'set-viewport': viewportOptions
+          }
+        };
+
+        await internals.generate(url, options);
+        expect(page.setViewport.calledOnceWith(viewportOptions)).toBe(true);
+      });
+
+      test('should call die when client set page view port throws an error', async () => {
+        page.setViewport.throws();
+        await internals.generate(url, {
+          page: {
+            'set-viewport': {}
+          }
+        });
+
+        expect(page.setViewport.called).toBe(true);
+        expect(dieStub.called).toBe(true);
       });
     });
   });
