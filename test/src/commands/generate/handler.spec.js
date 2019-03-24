@@ -229,21 +229,24 @@ describe('src/commands/generate/handler', () => {
       });
 
       test('should set page viewport with correct args', async () => {
-        const viewportOptions = {
-          width: 320,
-          height: 568,
-          isMobile: false,
-          hasTouch: false,
-          isLandscape: false
-        };
         const options = {
-          page: {
-            'set-viewport': viewportOptions
-          }
+          pageSetViewportWidth: 320,
+          pageSetViewportHeight: 568,
+          pageSetViewportDeviceScaleFactor: 1,
+          pageSetViewportIsMobile: false,
+          pageSetViewportHasTouch: false,
+          pageSetViewportIsLandscape: false
         };
+        const setViewportCallOptions = Object.keys(options)
+          .reduce((acc, key) => {
+            const option = key.replace('pageSetViewport', '');
+            const lsStr = option.charAt(0).toLowerCase() + option.slice(1);
+            acc[lsStr] = options[key];
+            return acc;
+          }, {});
 
         await internals.generate(url, options);
-        expect(page.setViewport.calledOnceWith(viewportOptions)).toBe(true);
+        expect(page.setViewport.calledOnceWith(setViewportCallOptions)).toBe(true);
       });
 
       test('should call die when client set page view port throws an error', async () => {

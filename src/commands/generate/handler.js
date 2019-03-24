@@ -13,12 +13,17 @@ internals.generate = async (url = '', options = {}) => {
   });
   const page = await browser.newPage();
 
-  if (options.page && options.page['set-viewport']) {
-    try {
-      await page.setViewport(options.page['set-viewport']);
-    } catch (err) {
-      die(err, browser);
-    }
+  try {
+    await page.setViewport({
+      width: options.pageSetViewportWidth,
+      height: options.pageSetViewportHeight,
+      deviceScaleFactor: options.pageSetViewportDeviceScaleFactor,
+      isMobile: options.pageSetViewportIsMobile,
+      hasTouch: options.pageSetViewportHasTouch,
+      isLandscape: options.pageSetViewportIsLandscape
+    });
+  } catch (err) {
+    die(err, browser);
   }
 
   if (options.emulateNetworkConditions === true) {

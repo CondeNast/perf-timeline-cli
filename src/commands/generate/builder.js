@@ -33,6 +33,7 @@ const OPTIONS = {
     describe: 'Whether to run browser in headless mode',
     group: 'Launch'
   },
+
   // Network emulation options
   'emulate-network-conditions': {
     default: false,
@@ -123,41 +124,42 @@ const OPTIONS = {
     describe: 'Categories to retrieve from the trace',
     group: 'Tracing options'
   },
+
   // Page.set-viewport
-  'page.set-viewport.width': {
+  'page-set-viewport-width': {
     default: 800,
     type: 'number',
-    describe: 'Page width in pixels',
+    describe: 'Viewport width in pixels',
     group: 'Page'
   },
-  'page.set-viewport.height': {
+  'page-set-viewport-height': {
     default: 600,
     type: 'number',
-    describe: 'Page height in pixels',
+    describe: 'Viewport height in pixels',
     group: 'Page'
   },
-  'page.set-viewport.deviceScaleFactor': {
+  'page-set-viewport-device-scale-factor': {
     default: 1,
     type: 'number',
-    describe: 'Specify device scale factor (can be thought of as dpr). Defaults to 1',
+    describe: 'Specify device scale factor (can be thought of as DPR)',
     group: 'Page'
   },
-  'page.set-viewport.isMobile': {
+  'page-set-viewport-is-mobile': {
     default: false,
     type: 'boolean',
-    describe: 'Whether the meta viewport tag is taken into account. Defaults to false',
+    describe: 'Whether the meta viewport tag is taken into account',
     group: 'Page'
   },
-  'page.set-viewport.hasTouch': {
+  'page-set-viewport-has-touch': {
     default: false,
     type: 'boolean',
-    describe: 'Specifies if viewport supports touch events.',
+    describe: 'Specifies if viewport supports touch events',
     group: 'Page'
   },
-  'page.set-viewport.isLandscape': {
+  'page-set-viewport-is-landscape': {
     default: false,
     type: 'boolean',
-    describe: 'Specifies if viewport is in landscape mode.',
+    describe: 'Specifies if viewport is in landscape mode',
     group: 'Page'
   }
 };
