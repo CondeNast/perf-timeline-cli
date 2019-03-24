@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+* Added Renovate to ensure dependencies stay up to date ([#15](https://github.com/CondeNast/perf-timeline-cli/issues/15))
+
+### Changes
+
+* Pin dependencies via Renovate ([#16](https://github.com/CondeNast/perf-timeline-cli/issues/16))
+
 ### Fixed
 
 * Fixed Test errors after Jest update ([#14](https://github.com/CondeNast/perf-timeline-cli/issues/14))
