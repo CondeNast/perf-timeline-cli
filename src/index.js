@@ -7,4 +7,3 @@ module.exports = yargs
   .demandCommand(1, 'You must enter a command')
   .help()
   .argv;
-
