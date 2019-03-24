@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 * Added Renovate to ensure dependencies stay up to date ([#15](https://github.com/CondeNast/perf-timeline-cli/issues/15))
+* Added `page.setViewport` args ([#19](https://github.com/CondeNast/perf-timeline-cli/issues/19))
 
 ### Changes
 
