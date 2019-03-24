@@ -39,6 +39,9 @@
     "jest": "^24.5.0",
     "sinon": "^4.4.8"
   },
+  "jest": {
+    "testEnvironment": "node"
+  },
   "keywords": [
     "chrome devtools",
     "cli",
