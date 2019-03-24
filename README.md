@@ -158,6 +158,19 @@ unless this flag is set.
 * `--rate` (optional; `1`) - Sets the CPU throttling rate. The number represents the slowdown
 factor (e.g., 2 is a "2x" slowdown).
 
+### Page Options
+
+#### `setViewport` Options
+
+The `setViewport` options mirror the [`page.setViewport()`](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagesetviewportviewport) options in Puppeteer. These options control viewport features of the page under test.
+
+* `--page-set-viewport-width` (optional; `800`) - The viewport width in pixels
+* `--page-set-viewport-height` (optional; `600`) - The viewport height in pixels
+* `--page-set-viewport-device-scale-factor` (optional; `1`) - Device pixel ratio for the current page
+* `--page-set-viewport-is-mobile` (optional; `false`) - Whether or note the `meta viewport` tag is taken into account
+* `--page-set-viewport-has-touch` (optional; `false`) - Specifies if viewport supports touch events
+* `--page-set-viewport-is-landscape` (optional; `false`) - Specifies if viewport is in landscape mode
+
 ### Goto Options
 
 The Goto Options mirror the `page.goto()` method's options from Puppeteer. These options allow you
