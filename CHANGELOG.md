@@ -6,6 +6,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+
+* Fixed Test errors after Jest update ([#14](https://github.com/CondeNast/perf-timeline-cli/issues/14))
+* Fixed new lint error after lint config updates ([#14](https://github.com/CondeNast/perf-timeline-cli/issues/14))
+
+### Security
+
+* Updated all packages to resolve `npm audit` and Github Security issues ([#14](https://github.com/CondeNast/perf-timeline-cli/issues/14))
+
 ## [0.1.3] - 2018-04-08
 
 ### Fixed
