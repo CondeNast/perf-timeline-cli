@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changes
 
 * Pin dependencies via Renovate ([#16](https://github.com/CondeNast/perf-timeline-cli/issues/16))
+* Updated `yargs` to 13.1.0 ([#20](https://github.com/CondeNast/perf-timeline-cli/issues/20))
 
 ### Fixed
 
