@@ -123,6 +123,12 @@ file here.
 a timeout between Puppeteer steps and is primary used for debugging to allow you to make
 observations between steps. Please note that this could potentially cause inaccurate timelines to be
 generated.
+* `--launch-default-viewport-width` (optional; `800`) - The viewport width in pixels
+* `--launch-default-viewport-height` (optional; `600`) - The viewport height in pixels
+* `--launch-default-viewport-device-scale-factor` (optional; `1`) - Device pixel ratio for the current page
+* `--launch-default-viewport-is-mobile` (optional; `false`) - Whether or note the `meta viewport` tag is taken into account
+* `--launch-default-viewport-has-touch` (optional; `false`) - Specifies if viewport supports touch events
+* `--launch-default-viewport-is-landscape` (optional; `false`) - Specifies if viewport is in landscape mode
 * `--args` (options; `''`) - Additional flag arguments that can be passed to the browser instance
 when starting it. There are a [number of flags](https://peter.sh/experiments/chromium-command-line-switches/)
 that can be passed. The flags should be passed as a comma separated list, e.g.,

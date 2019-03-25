@@ -12,6 +12,14 @@ internals.generate = async (url = '', options = {}) => {
     headless: options.launchHeadless,
     executablePath: options.launchExecutablePath,
     slowMo: options.launchSlowMo,
+    defaultViewport: {
+      width: options.launchDefaultViewportWidth,
+      height: options.launchDefaultViewportHeight,
+      deviceScaleFactor: options.launchDefaultViewportDeviceScaleFactor,
+      isMobile: options.launchDefaultViewportIsMobile,
+      hasTouch: options.launchDefaultViewportHasTouch,
+      isLandscape: options.launchDefaultViewportIsLandscape
+    },
     args: options.launchArgs,
     ignoreDefaultArgs: options.launchIgnoreDefaultArgs,
     handleSIGINT: options.launchHandleSigint,

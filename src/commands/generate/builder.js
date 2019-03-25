@@ -45,6 +45,42 @@ const OPTIONS = {
     describe: 'Slows down Puppeteer operations by the specified amount of milliseconds',
     group: 'Launch'
   },
+  'launch-default-viewport-width': {
+    default: 800,
+    type: 'number',
+    describe: 'Viewport width in pixels',
+    group: 'Launch'
+  },
+  'launch-default-viewport-height': {
+    default: 600,
+    type: 'number',
+    describe: 'Viewport height in pixels',
+    group: 'Launch'
+  },
+  'launch-default-viewport-device-scale-factor': {
+    default: 1,
+    type: 'number',
+    describe: 'Specify device scale factor (can be thought of as DPR)',
+    group: 'Launch'
+  },
+  'launch-default-viewport-is-mobile': {
+    default: false,
+    type: 'boolean',
+    describe: 'Whether the meta viewport tag is taken into account',
+    group: 'Launch'
+  },
+  'launch-default-viewport-has-touch': {
+    default: false,
+    type: 'boolean',
+    describe: 'Specifies if viewport supports touch events',
+    group: 'Launch'
+  },
+  'launch-default-viewport-is-landscape': {
+    default: false,
+    type: 'boolean',
+    describe: 'Specifies if viewport is in landscape mode',
+    group: 'Launch'
+  },
   'launch-args': {
     default: [],
     type: 'array',
