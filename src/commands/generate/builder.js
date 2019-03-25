@@ -21,55 +21,55 @@ const WAIT_UNTIL_OPTIONS = [
 
 const OPTIONS = {
   // Launch options
-  'ignore-https-errors': {
+  'launch-ignore-https-errors': {
     default: false,
     type: 'boolean',
     describe: 'Whether to ignore HTTPS errors during navigation',
     group: 'Launch'
   },
-  headless: {
+  'launch-headless': {
     default: true,
     type: 'boolean',
     describe: 'Whether to run browser in headless mode',
     group: 'Launch'
   },
-  'executable-path': {
+  'launch-executable-path': {
     default: null, // Empty string will throw an error in Puppeteer
     type: 'string',
     describe: 'Path to a Chromium or Chrome executable to run instead of the bundled Chromium',
     group: 'Launch'
   },
-  'slow-mo': {
+  'launch-slow-mo': {
     default: 0,
     type: 'number',
     describe: 'Slows down Puppeteer operations by the specified amount of milliseconds',
     group: 'Launch'
   },
-  args: {
+  'launch-args': {
     default: [],
     type: 'array',
     describe: 'Additional arguments to pass to the browser instance',
     group: 'Launch'
   },
-  'ignore-default-args': {
+  'launch-ignore-default-args': {
     default: false,
     type: 'boolean',
     describe: 'Do not use Puppeteer\'s defaultArgs object',
     group: 'Launch'
   },
-  'handle-sigint': {
+  'launch-handle-sigint': {
     default: true,
     type: 'boolean',
     describe: 'Close the browser process on Ctrl-C',
     group: 'Launch'
   },
-  'handle-sigterm': {
+  'launch-handle-sigterm': {
     default: true,
     type: 'boolean',
     describe: 'Close the browser process on SIGTERM',
     group: 'Launch'
   },
-  'handle-sighup': {
+  'launch-handle-sighup': {
     default: true,
     type: 'boolean',
     describe: 'Close the browser process on SIGHUP',
@@ -81,32 +81,32 @@ const OPTIONS = {
     describe: 'Maximum time in milliseconds to wait for the browser instance to start',
     group: 'Launch'
   },
-  dumpio: {
+  'launch-dumpio': {
     default: false,
     type: 'boolean',
     describe: 'Whether to pipe the browser process stdout and stderr into process.stdout and process.stderr',
     group: 'Launch'
   },
-  'user-data-dir': {
+  'launch-user-data-dir': {
     default: '',
     type: 'string',
     describe: 'Path to a User Data Directory',
     group: 'Launch'
   },
-  env: {
+  'launch-env': {
     default: process.env,
     type: 'string',
     describe: 'Specify environment variables that will be visible to the browser',
     group: 'Launch',
     coerce: maybeStringToJson
   },
-  devtools: {
+  'launch-devtools': {
     default: false,
     type: 'boolean',
     describe: 'Whether to auto-open a DevTools panel for each tab',
     group: 'Launch'
   },
-  pipe: {
+  'launch-pipe': {
     default: false,
     type: 'boolean',
     describe: 'Connects to the browser over a pipe instead of a WebSocket',

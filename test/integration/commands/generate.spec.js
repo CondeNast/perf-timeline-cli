@@ -16,7 +16,7 @@ const testCommand = {
 const cli = yargs.command(testCommand);
 
 describe.only('src/commands/generate', () => {
-  describe('ignore-https-errors', () => {
-    bool(cli, 'ignore-https-errors');
+  describe('launch-ignore-https-errors', () => {
+    bool(cli, 'launch-ignore-https-errors');
   });
 });

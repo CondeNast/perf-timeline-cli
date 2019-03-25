@@ -8,21 +8,21 @@ const internals = {};
 internals.generate = async (url = '', options = {}) => {
   const { die } = dieModule;
   const browser = await puppeteer.launch({
-    ignoreHTTPSErrors: options.ignoreHTTPSErrors,
-    headless: options.headless,
-    executablePath: options.executablePath,
-    slowMo: options.slowMo,
-    args: options.args,
-    ignoreDefaultArgs: options.ignoreDefaultArgs,
-    handleSIGINT: options.handleSigint,
-    handleSIGTERM: options.handleSigterm,
-    handleSIGHUP: options.handleSighup,
+    ignoreHTTPSErrors: options.launchIgnoreHTTPSErrors,
+    headless: options.launchHeadless,
+    executablePath: options.launchExecutablePath,
+    slowMo: options.launchSlowMo,
+    args: options.launchArgs,
+    ignoreDefaultArgs: options.launchIgnoreDefaultArgs,
+    handleSIGINT: options.launchHandleSigint,
+    handleSIGTERM: options.launchHandleSigterm,
+    handleSIGHUP: options.launchHandleSighup,
     timeout: options.launchTimeout, // Note the naming difference due to "timeout" name collision
-    dumpio: options.dumpio,
-    userDataDir: options.userDataDir,
-    env: options.env,
-    devtools: options.devtools,
-    pipe: options.pipe
+    dumpio: options.launchDumpio,
+    userDataDir: options.launchUserDataDir,
+    env: options.launchEnv,
+    devtools: options.launchDevtools,
+    pipe: options.launchPipe
   });
   const page = await browser.newPage();
 
