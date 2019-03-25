@@ -1,6 +1,6 @@
 const sinon = require('sinon');
 
-const { buildCommand, send } = require('../../../src/utils/client');
+const { buildCommand, send } = require('../../../../src/utils/client');
 
 const sandbox = sinon.createSandbox();
 

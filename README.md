@@ -109,12 +109,62 @@ Launch options are passed to the `puppeteer.launch()` command. Not all options a
 supported. Supported options are listed below. For more information, please see the [Puppeteer
 Documentation](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#puppeteerlaunchoptions).
 
-* `--ignore-https-errors` (optional; `false`) - When `--ignore-https-errors` is passed, an HTTPS
+* `--ignore-https-errors` (optional; `false`) - When `--ignore-https-errors` is passed, all HTTPS
 errors will be ignored. This causes Chrome's default error behaviors when encountering HTTPS issues
 to be ignored.
-* `--headless` (options; `true`) - By default, Perf Timeline CLI runs in "[headless](https://developers.google.com/web/updates/2017/04/headless-chrome)" mode (i.e., without a visible
+* `--headless` (optional; `true`) - By default, Perf Timeline CLI runs in "[headless](https://developers.google.com/web/updates/2017/04/headless-chrome)" mode (i.e., without a visible
 browser UI). To see a browser UI when generating the timeline, pass the `--headless false` to the
 `generate` command. Please note that `--no-headless` is a synonym for `--headless false`.
+* `--executable-path` (optional; `null`) - Define a path to run a specific Chrome or Chromium
+executable. By default, the bundled Chromium, which is the optimal executable for Puppeteer will be
+used to generate the timeline. If you prefer a specific executable, you can define the path to the
+file here.
+* `--slow-mo` (optional; `0`) - Number of milliseconds to slow down the Puppeteer steps. This adds
+a timeout between Puppeteer steps and is primary used for debugging to allow you to make
+observations between steps. Please note that this could potentially cause inaccurate timelines to be
+generated.
+* `--launch-default-viewport-width` (optional; `800`) - The viewport width in pixels
+* `--launch-default-viewport-height` (optional; `600`) - The viewport height in pixels
+* `--launch-default-viewport-device-scale-factor` (optional; `1`) - Device pixel ratio for the current page
+* `--launch-default-viewport-is-mobile` (optional; `false`) - Whether or note the `meta viewport` tag is taken into account
+* `--launch-default-viewport-has-touch` (optional; `false`) - Specifies if viewport supports touch events
+* `--launch-default-viewport-is-landscape` (optional; `false`) - Specifies if viewport is in landscape mode
+* `--args` (options; `''`) - Additional flag arguments that can be passed to the browser instance
+when starting it. There are a [number of flags](https://peter.sh/experiments/chromium-command-line-switches/)
+that can be passed. The flags should be passed as a comma separated list, e.g.,
+`--args="--disable-gpu,--video-threads=5"`. Due to the sheer volume of possible flags, not all can
+be verified. Your mileage may vary.
+* `--ignore-default-args` (optional; `false`) - Passing this flag will ignore Puppeteer's default
+args for launching Chrome.
+* `--handle-sigint` (optional; `true`) - Setting this to `false` or passing `--no-handle-sigint`
+will cause Puppeteer to ignore the closing the browser on Ctrl-C. By default, the browser is closed
+on Ctrl-C.
+* `--handle-sigterm` (optional; `true`) - Setting this to `false` or passing `--no-handle-sigterm`
+will cause Puppeteer to ignore the closing the browser on SIGTERM. By default, the browser is closed
+on SIGTERM.
+* `--handle-sighup` (optional; `true`) - Setting this to `false` or passing `--no-handle-sighup`
+will cause Puppeteer to ignore the closing the browser on SIGHUP. By default, the browser is closed
+on SIGHUP.
+* `--launch-timeout` (optional; `30000`) - Amount of time in milliseconds to allow the browser to
+launch before timing out. Note that the name of this arg diverges from Puppeteer's due to a name
+collision with another argument.
+* `--dumpio` (optional; `false`) - Determines whether or not to send the browser process' stdout and
+stderr to the terminal. Setting this argument to `true` will show the console information in the
+terminal session.
+* `--user-data-dir` (optional; `''`) - The path to the user directory that you wish you use while
+creating the timeline.
+* `--env` (optional: `process.env`) - The `env` argument allows you to specify environment variables
+to use for the browser session. By default, it will read from `process.env`. However, if you wish
+to pass variables into the tool via command args, you can do so via the `env` arg. The value must be
+a valid JSON string. For instance, `--env='{"foo":"bar","biz":{"boz":"buz"}}'`. Since the default is
+to use `process.env`, you can pass arguments via traditional environment variables. This interface
+is optional and allows for greater flexibility.
+* `--devtools` (optional; `false`) - Passing this flag will open a DevTools tab when
+using Perf Timeline in non-headless mode. Note that if page execution is really fast, this option
+won't do much. You can slow down execution using the `--slow-mo` arg. A reasonable way to use this
+arg would to do something like: `--slow-mo 2000 --no-headless --devtools`.
+* `--pipe` (optional; `false`) - Passing this flag causes Puppeteer to use a pipe to connect to the
+browser instead of the default web socket method.
 
 ### Network Emulation Options
 

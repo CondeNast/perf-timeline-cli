@@ -4,9 +4,9 @@ const sinon = require('sinon');
 const {
   __internals__: internals,
   handler
-} = require('../../../../src/commands/generate/handler');
-const client = require('../../../../src/utils/client');
-const die = require('../../../../src/utils/die');
+} = require('../../../../../src/commands/generate/handler');
+const client = require('../../../../../src/utils/client');
+const die = require('../../../../../src/utils/die');
 
 const sandbox = sinon.createSandbox();
 

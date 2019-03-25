@@ -1,4 +1,4 @@
-const { builder } = require('../../../../src/commands/generate/builder');
+const { builder } = require('../../../../../src/commands/generate/builder');
 
 describe('src/commands/generate/builder', () => {
   test('should export options with required properties', () => {

@@ -1,4 +1,4 @@
-const { megabitsToBytes } = require('../../utils/general');
+const { maybeStringToJson, megabitsToBytes } = require('../../utils/general');
 
 const CONNECTION_TYPES = [
   'none',
@@ -21,16 +21,131 @@ const WAIT_UNTIL_OPTIONS = [
 
 const OPTIONS = {
   // Launch options
-  'ignore-https-errors': {
+  'launch-ignore-https-errors': {
     default: false,
     type: 'boolean',
     describe: 'Whether to ignore HTTPS errors during navigation',
     group: 'Launch'
   },
-  headless: {
+  'launch-headless': {
     default: true,
     type: 'boolean',
     describe: 'Whether to run browser in headless mode',
+    group: 'Launch'
+  },
+  'launch-executable-path': {
+    default: null, // Empty string will throw an error in Puppeteer
+    type: 'string',
+    describe: 'Path to a Chromium or Chrome executable to run instead of the bundled Chromium',
+    group: 'Launch'
+  },
+  'launch-slow-mo': {
+    default: 0,
+    type: 'number',
+    describe: 'Slows down Puppeteer operations by the specified amount of milliseconds',
+    group: 'Launch'
+  },
+  'launch-default-viewport-width': {
+    default: 800,
+    type: 'number',
+    describe: 'Viewport width in pixels',
+    group: 'Launch'
+  },
+  'launch-default-viewport-height': {
+    default: 600,
+    type: 'number',
+    describe: 'Viewport height in pixels',
+    group: 'Launch'
+  },
+  'launch-default-viewport-device-scale-factor': {
+    default: 1,
+    type: 'number',
+    describe: 'Specify device scale factor (can be thought of as DPR)',
+    group: 'Launch'
+  },
+  'launch-default-viewport-is-mobile': {
+    default: false,
+    type: 'boolean',
+    describe: 'Whether the meta viewport tag is taken into account',
+    group: 'Launch'
+  },
+  'launch-default-viewport-has-touch': {
+    default: false,
+    type: 'boolean',
+    describe: 'Specifies if viewport supports touch events',
+    group: 'Launch'
+  },
+  'launch-default-viewport-is-landscape': {
+    default: false,
+    type: 'boolean',
+    describe: 'Specifies if viewport is in landscape mode',
+    group: 'Launch'
+  },
+  'launch-args': {
+    default: [],
+    type: 'array',
+    describe: 'Additional arguments to pass to the browser instance',
+    group: 'Launch'
+  },
+  'launch-ignore-default-args': {
+    default: false,
+    type: 'boolean',
+    describe: 'Do not use Puppeteer\'s defaultArgs object',
+    group: 'Launch'
+  },
+  'launch-handle-sigint': {
+    default: true,
+    type: 'boolean',
+    describe: 'Close the browser process on Ctrl-C',
+    group: 'Launch'
+  },
+  'launch-handle-sigterm': {
+    default: true,
+    type: 'boolean',
+    describe: 'Close the browser process on SIGTERM',
+    group: 'Launch'
+  },
+  'launch-handle-sighup': {
+    default: true,
+    type: 'boolean',
+    describe: 'Close the browser process on SIGHUP',
+    group: 'Launch'
+  },
+  'launch-timeout': {
+    default: 30000,
+    type: 'number',
+    describe: 'Maximum time in milliseconds to wait for the browser instance to start',
+    group: 'Launch'
+  },
+  'launch-dumpio': {
+    default: false,
+    type: 'boolean',
+    describe: 'Whether to pipe the browser process stdout and stderr into process.stdout and process.stderr',
+    group: 'Launch'
+  },
+  'launch-user-data-dir': {
+    default: '',
+    type: 'string',
+    describe: 'Path to a User Data Directory',
+    group: 'Launch'
+  },
+  'launch-env': {
+    default: process.env,
+    type: 'string',
+    describe: 'Specify environment variables that will be visible to the browser',
+    group: 'Launch',
+    coerce: maybeStringToJson
+  },
+  'launch-devtools': {
+    default: false,
+    type: 'boolean',
+    describe: 'Whether to auto-open a DevTools panel for each tab',
+    group: 'Launch'
+  },
+  'launch-pipe': {
+    default: false,
+    type: 'boolean',
+    describe: 'Connects to the browser over a pipe instead of a WebSocket',
     group: 'Launch'
   },
 

@@ -1,7 +1,7 @@
 const sinon = require('sinon');
 
-const { die } = require('../../../src/utils/die');
-const logger = require('../../../src/utils/logger');
+const { die } = require('../../../../src/utils/die');
+const logger = require('../../../../src/utils/logger');
 
 const sandbox = sinon.createSandbox();
 
