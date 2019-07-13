@@ -34,7 +34,7 @@
   "devDependencies": {
     "acorn": "6.1.1",
     "eslint": "5.15.3",
-    "eslint-config-airbnb-base": "13.1.0",
+    "eslint-config-airbnb-base": "13.2.0",
     "eslint-plugin-import": "2.16.0",
     "jest": "24.5.0",
     "sinon": "7.3.0"
