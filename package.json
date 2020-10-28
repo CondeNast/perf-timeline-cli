@@ -18,7 +18,7 @@
   "dependencies": {
     "cli-logger": "^0.5.40",
     "puppeteer": "^1.2.0",
-    "yargs": "^13.0.0"
+    "yargs": "^16.0.0"
   },
   "bin": {
     "perf-timeline": "./bin/index.js"
