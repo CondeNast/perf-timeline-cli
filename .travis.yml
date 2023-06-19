@@ -1,7 +1,7 @@
 ---
 language: node_js
 node_js:
-  - "8.0.0"
+  - "8.17.0"
   - "8"
   - "lts/*"
   - "9"
